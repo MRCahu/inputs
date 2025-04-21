@@ -1,0 +1,96 @@
+ice-cream-sales-prediction/
+│
+├── inputs/
+│   └── dados.csv (ou txt com dados simulados: temperatura x vendas)
+│
+├── notebooks/
+│   └── exploracao_e_modelo.ipynb
+│
+├── src/
+│   └── train.py
+│   └── predict.py
+│
+├── mlruns/ (gerado pelo MLflow)
+│
+├── environment.yml (ambiente Conda usado)
+├── README.md
+└── requirements.txt
+
+# README.md
+"""
+# Prevendo Vendas de Sorvete com Machine Learning 🍦📊
+
+Este projeto aplica um modelo de regressão linear para prever a quantidade de sorvetes vendidos com base na temperatura do dia.
+
+## Objetivo
+- Prever vendas com base na temperatura.
+- Usar MLflow para registrar métricas, parâmetros e artefatos.
+- Transformar o código em scripts prontos para produção.
+
+## Estrutura do Projeto
+```bash
+ice-cream-sales-prediction/
+├── inputs/
+│   └── dados.csv
+├── src/
+│   ├── train.py
+│   └── predict.py
+├── environment.yml
+├── README.md
+```
+
+## Executando o projeto
+### 1. Treinamento:
+```bash
+python src/train.py --data inputs/dados.csv
+```
+
+### 2. Previsão:
+```bash
+python src/predict.py --temperatura 28
+```
+
+## Prints
+Adicione aqui capturas de tela do MLflow, notebooks, gráficos, etc.
+
+## Insights
+- A temperatura é um preditor importante para o volume de vendas.
+- Automatizar esse processo permite melhor planejamento de produção.
+
+## Tecnologias utilizadas
+- Python
+- Scikit-learn
+- MLflow
+- Pandas
+
+## Licença
+Este projeto está sob a licença MIT.
+"""
+
+# environment.yml
+"""
+name: icecream-env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - scikit-learn
+  - pandas
+  - joblib
+  - pip:
+      - mlflow
+"""
+
+# inputs/dados.csv (exemplo de conteúdo)
+"Temperatura","Vendas"
+20,50
+22,65
+24,70
+26,80
+28,90
+30,110
+32,125
+34,140
+36,150
